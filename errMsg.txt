@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/gpytorch/module.py", line 342, in __getattr__
+    return super().__getattribute__(name)
+AttributeError: 'ConstantMean' object has no attribute 'log_prob'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "gpr_hetero_SingleMulti.py", line 185, in <module>
+    gprTorch_singleTask()
+  File "gpr_hetero_SingleMulti.py", line 167, in gprTorch_singleTask
+    loss = -mll(output, train_y, train_x)
+  File "/usr/local/lib/python3.6/site-packages/gpytorch/module.py", line 24, in __call__
+    outputs = self.forward(*inputs, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/gpytorch/mlls/exact_marginal_log_likelihood.py", line 59, in forward
+    res.add_(prior.log_prob(closure()).sum())
+  File "/usr/local/lib/python3.6/site-packages/gpytorch/module.py", line 344, in __getattr__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/gpytorch/module.py", line 339, in __getattr__
+    return super().__getattr__(name)
+  File "/usr/local/lib/python3.6/site-packages/torch/nn/modules/module.py", line 576, in __getattr__
+    type(self).__name__, name))
+AttributeError: 'ConstantMean' object has no attribute 'log_prob'
